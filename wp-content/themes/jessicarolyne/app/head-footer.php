@@ -10,7 +10,7 @@ add_action('wp_head','addStyleBootstrap');
 
 function addStyle(){
 ?>
-    <link rel="stylesheet" href="<?php bloginfo('template_url');?>?ver=0.0.1" />
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url');?>?ver=0.0.1" />
 <?php
 }
 add_action('wp_head', 'addStyle');

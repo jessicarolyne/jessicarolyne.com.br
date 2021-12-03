@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "assets/css/style.scss",
+        "assets/css/_header.scss",
+        "assets/css/_footer.scss",
+        "assets/css/_home.scss",
+        "assets/css/pages/_contato.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
