@@ -1,0 +1,76 @@
+header{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+
+    .menu-principal{
+        max-width: 968px;
+        height: var(--header-height);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        a{
+            color: var(--title-color);
+            &:hover{
+                color: var(--first-color);
+            }
+        }
+        .logo{
+            display: block;
+            text-align: center;
+            .nome{
+                font-weight: var(--font-medium);
+                font-size: var(--h2-font-size);
+            }
+            .funcao{
+                font-size: var(--smaller-font-size);
+            }
+        }
+        .menu-wrapper{
+            .menu{
+                ul{
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 2rem;
+                    li{
+                        font-size: 1.1rem;
+                        cursor: pointer;
+                        a{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            font-size: var(--small-font-size);
+                            color: var(--title-color);
+                            font-weight: var(--font-medium);
+                            &:hover{
+                                color: var(--first-color);
+                            }
+                            .icon{
+                                font-size: 1.2rem;
+                            }
+                        }
+                        &:hover{
+                            color: var(--first-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 767px){
+        .menu{
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background-color: var(--body-color);
+            padding: 2rem 1.5rem 4rem;
+            box-shadow: 0 -1px 4px rgba(0,0,0,.15);
+            border-radius: 1.5rem 1.5rem 0 0;
+            transition: .3s;
+        }
+    }
+}

@@ -12,18 +12,23 @@
     <header>
         <div class="container-fluid menu-principal">
             <div class="logo">
-                <a href="<?php echo home_url(); ?>"></a>
-                <img src="<?php bloginfo('template_url')?>/assets/images/logo.png" alt="jessicarolyne - web developer">
+                <a href="<?php echo home_url(); ?>">
+                    <span class='nome'>jessicarolyne</span>
+                    <br>
+                    <span class="funcao">Web Developer</span>
+                </a>
+                <!-- <img src="<?php bloginfo('template_url')?>/assets/images/logo.png" alt="jessicarolyne - web developer"> -->
             </div>
-        </div>
-        <div class="menu-wrapper">
-        <?php
-            wp_nav_menu(array(
-                'theme_location' => 'menu-principal',
-                'menu_class' => 'nav',
-                'container_class' => 'menu',
-                'fallback_cb' => false,
-            ));
-            ?>
+            <div class="menu-wrapper">
+            <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'menu-principal',
+                    'menu_class' => 'navbar-nav grid',
+                    'container_class' => 'menu',
+                    'fallback_cb' => false,
+                ));
+                ?>
+                <div class="fechar">Fechar</div>
+            </div>
         </div>
     </header>
