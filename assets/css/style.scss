@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&family=Yanone+Kaffeesatz:wght@300;400&display=swap");
+
+$violeta: #7829f1;
+$cinza: #707070;
+$verde-claro: #a8e1d7;
+$amarelo-claro: #faf9f5;
+$violeta-claro: #dc9afe;
+
+*{
+    box-sizing: border-box;
+}
+
+body{ 
+    background: $violeta-claro;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    margin: 0;
+}
+
+.container{
+    width: 80%;
+    height: 500px;
+    background: $amarelo-claro;
+    display: flex;
+    border-radius: 34px;
+}
+
+.menu{
+    width: 70px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+
+    svg{
+        width: 100%;
+        height: 60px;
+        padding: 10px;
+        color: $cinza;
+    }
+
+    .selected{
+        color: $violeta;
+    }
+}
+
+.conteudo-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .borda{
+        background: white;
+        width: 600px;
+        height: 370px;
+        -webkit-box-shadow: -9px 13px 31px -16px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: -9px 13px 31px -16px rgba(0, 0, 0, 0.75);
+        box-shadow: -9px 13px 31px -16px rgba(0, 0, 0, 0.75);
+        position: absolute;
+        right: 30px;
+        border-radius: 80px;
+        padding: 0 30px;
+        display: flex;
+        animation: board-right-grow ls;
+
+        .bordaD, .bordaE{
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            scroll-behavior: smooth;
+    
+            .info-img{
+                margin-top: 15px;
+                height: 150px;
+                border-radius: 16px;
+            }
+    
+            .header{
+                svg{
+                    color: $violeta;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+    
+            .sub-header{
+                svg{
+                    color: $cinza;
+                }
+            }
+        }
+    
+        .bordaD{
+            p{
+                margin: 5px 0;
+            }
+            h2{
+                margin: 20px 0;
+            }
+        }
+    
+        .inline-content{
+            display: flex;
+            align-items: center;
+    
+            svg{
+                margin: 0 5px;
+            }
+        }
+    
+        .card{
+            height: 100%;
+            padding: 40px;
+        }
+    }
+    
+    .caixa{
+        width: 600px;
+        height: 370px;
+        background: $violeta;
+        border-radius: 80px;
+        position: absolute;
+        right: 300px;
+    
+        .banner{
+            width: 200px;
+            position: absolute;
+            top: -50px;
+            left: 50px;
+            opacity: 1;
+        }
+    }
+
+    .caixa-aberta{
+        animation: board-right-grow 0.5s ease 0s forwards;
+
+        .banner{
+            animation: show 0.5s forwards;
+        }
+    }
+    .caixa-fechada{
+        animation: board-right-shrink 0.5s ease 0s forwards;
+
+        .banner{ 
+            animation: hide 0.5s forwards;
+        }
+    }
+}
+
+@keyframes board-right-grow{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 600px;
+    }
+}
+
+@keyframes board-right-shrink{
+    0%{
+        width: 600px;
+    }
+    100%{
+        width: 0;
+    }
+}
+
+@keyframes show{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes hide{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
